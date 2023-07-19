@@ -47,7 +47,10 @@ class _HomeState extends State<Home> {
     return Scaffold(
 
       appBar: AppBar(
-        title: Text("rfk;fk"),
+        title: Text("Tickets"),
+        //backgroundColor: Color.fromARGB(1, 255, 140, 26),
+
+
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
