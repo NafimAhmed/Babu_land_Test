@@ -5,6 +5,7 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 
 class Home extends StatefulWidget{
@@ -58,8 +59,45 @@ class _HomeState extends State<Home> {
             itemCount: apiMap!['items'].length,
               itemBuilder:(BuildContext context, int index){
 
-            return ListTile(
-              title: Text("This is text ${index}"),
+            return Container(
+
+              child: Column(
+                children: [
+                  Text("This is your Entry Ticket",
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700
+                  ),
+                  ),
+
+                  Text("Order ID: ${apiMap!['items'][index]['pk']}",
+                    style: GoogleFonts.poppins(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400
+                    ),
+                  ),
+
+                  Text("Ticket Price: ${apiMap!['items'][index]['total']}",
+                    style: GoogleFonts.poppins(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400
+                    ),
+                  ),
+
+
+                  Text(" Purchase Date  ${apiMap!['items'][index]['sell_date']}",
+                    style: GoogleFonts.poppins(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400
+                    ),
+                  ),
+
+
+
+
+                ],
+              ),
+
             );
 
           }
