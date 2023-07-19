@@ -3,10 +3,12 @@
 
 import 'dart:convert';
 
+import 'package:babu_land_test/page2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
+import 'package:sizer/sizer.dart';
 
 class Home extends StatefulWidget{
 
@@ -96,6 +98,45 @@ class _HomeState extends State<Home> {
                   ),
 
 
+                  Padding(
+                    padding: const EdgeInsets.only(left: 0),
+                    child: Container(
+                      height: 35.sp,width:30.w ,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4.0),
+                          color: Color.fromARGB(255, 255, 140, 43)
+                      ),
+                      child: TextButton(
+                        style: ButtonStyle(
+                          shadowColor: MaterialStateProperty.all(Colors.transparent),
+                          overlayColor: MaterialStateProperty.all(Colors.transparent),
+                        ),
+                        onPressed: (){
+
+
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      Page2()
+                              )
+                          );
+
+
+
+
+
+
+
+                        },
+                        child: Text('Active',
+                          style: TextStyle(
+                              fontSize: 20,color: Colors.white),),
+                      ),
+                    ),
+                  ),
+
+
 
 
                 ],
@@ -110,6 +151,9 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+
+
+
 
   @override
   void initState() {
